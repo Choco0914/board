@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head lang="ko">
-    <meta charset="utf-utf-8">
-    <title>게시판</title>
+{% extends "post_service/base.html" %}
 
-  </head>
-  <body>
-    Hello, '{{ python_word }}' World:
-  </body>
-</html>
+{% block header %}
+  <table>
+    <thead>
+      <tr>
+        <th>제목</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+{% endblock %}
+
+{% block content %}
+  <tbody>
+    {% for post in post_list %}
+      <tr>
+        <td>{{ post.title }}</td>
+        <td>{{ post.author }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+  {% for page in totla_page %}
+  <a{% if current_page != page %} href="?page={{ page }}" {% endif %}>
+    <span {% if current_page == page %} style="font-weight: bold"
+     {% endif %}>{{ page }}</span>
+  </a>
+  {% endfor %}
+{% endblock %}
