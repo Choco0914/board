@@ -4,6 +4,9 @@ from . import views
 app_name = 'user_manager'
 
 urlpatterns = [
+        # Join
+        re_path(r'^join/$', views.join_page, name='join_page'),
+
         # login
         re_path(r'^login/$', views.login, name='login'),
 
