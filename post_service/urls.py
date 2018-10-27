@@ -8,10 +8,4 @@ urlpatterns=[
     # list_home
     re_path(r'^$', views.post_list, name='list'),
 
-    # login
-    re_path(r'^login/$', views.login, name='login'),
-
-    # validate
-    re_path(r'^login/validate/$', views.login_validate, name='login_validate'),
-
 ]

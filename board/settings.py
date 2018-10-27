@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # create my app
     'post_service',
+    'user_manager',
 
     # rest framework
     'rest_framework',
